@@ -1,13 +1,39 @@
 <div align="center">
 
-<img src="public/cover.png" alt="Keyfetti" width="440" />
+# 🎉 Keyfetti
 
-### A playful, full-screen keyboard toy for kids 🎉
+### A playful, full-screen keyboard toy for kids
 
 Press any letter or number and watch it pop up like confetti — and hear it spoken aloud.
 Every other key is disabled, so little ones can mash away safely.
 
+[Features](#-features) &nbsp;·&nbsp; [How to play](#-how-to-play) &nbsp;·&nbsp; [Getting started](#-getting-started) &nbsp;·&nbsp; [Tech stack](#-tech-stack) &nbsp;·&nbsp; [Project structure](#-project-structure)
+
+![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)
+![No assets](https://img.shields.io/badge/audio-synthesised%20%C2%B7%20no%20files-2ea043?style=flat-square)
+
+<img src="public/cover.png" alt="Keyfetti" width="440" />
+
 </div>
+
+---
+
+Built with **Next.js 16 + React 19 + TypeScript**, all motion and sound hand-rolled: the rise, drift,
+confetti, and aurora run as **pure CSS keyframes** on the compositor (off the main thread), and every
+"pop" is **synthesised** with the Web Audio API — zero animation libraries, zero audio files.
+
+## Contents
+
+- [Features](#-features)
+- [How to play](#-how-to-play)
+- [Getting started](#-getting-started)
+- [Tech stack](#-tech-stack)
+- [Project structure](#-project-structure)
+- [A note on "disabling" keys](#-a-note-on-disabling-keys)
+- [License](#-license)
 
 ---
 
@@ -35,6 +61,8 @@ Every other key is disabled, so little ones can mash away safely.
 - **Kid-proofing & a11y.** Fullscreen toggle, right-click disabled, screen-reader announcements, and
   full respect for the OS "reduce motion" setting (confetti and aurora pause; letters simply fade).
 
+---
+
 ## 🎮 How to play
 
 Just start pressing keys! A small controls cluster sits in the top-right corner:
@@ -45,7 +73,11 @@ Just start pressing keys! A small controls cluster sits in the top-right corner:
 | ⛶ | Toggle fullscreen (best for distraction-free play) |
 | ⚙️ | **Settings:** show letters / numbers / both, choose letter case (`Aa` / `A` / `a`), and toggle the on-screen keyboard |
 
+---
+
 ## 🚀 Getting started
+
+This project uses **Yarn** (Yarn 1.x — Classic).
 
 ```bash
 yarn install
@@ -57,7 +89,10 @@ Open [http://localhost:3000](http://localhost:3000) and start pressing keys.
 ```bash
 yarn build   # production build
 yarn start   # serve the production build
+yarn lint    # eslint
 ```
+
+---
 
 ## 🧱 Tech stack
 
@@ -68,6 +103,8 @@ yarn start   # serve the production build
 - **Web Audio API** (synthesized pop) + **Web Speech API** (spoken letters) — no audio files
 
 > Zero runtime dependencies beyond React and Next.js — all the motion and sound is hand-rolled.
+
+---
 
 ## 📁 Project structure
 
@@ -87,6 +124,8 @@ src/lib/                  keyboard-layout (QWERTY → position), colors, speech 
 Keystrokes are pushed into `confetti-layer.tsx` imperatively, so a press re-renders only that layer —
 the controls and on-screen keyboard never re-render on input, keeping rapid mashing fast.
 
+---
+
 ## 🔒 A note on "disabling" keys
 
 A web page can ignore keys and call `preventDefault()` to stop in-page actions (scrolling, find,
@@ -94,3 +133,11 @@ tab-navigation, etc.), and Keyfetti does so for every non-letter/number key. How
 not let a page block OS/browser-reserved shortcuts** such as `Ctrl`/`Cmd`+`W`, `Cmd`+`Q`, `F11`, or
 `Alt`+`Tab`. For the most distraction-free experience with young children, use the **Fullscreen**
 button together with your browser's kiosk / guided-access mode.
+
+---
+
+## 📄 License
+
+No license file is included yet. If you plan to share or fork this, add one — [MIT](https://choosealicense.com/licenses/mit/) is a sensible default for a project like this.
+
+© Rayhan
