@@ -141,3 +141,7 @@ button together with your browser's kiosk / guided-access mode.
 No license file is included yet. If you plan to share or fork this, add one — [MIT](https://choosealicense.com/licenses/mit/) is a sensible default for a project like this.
 
 © Rayhan
+
+---
+
+<p align="center">Bugged by <img src="public/SINDBUG.gif" alt="SINDBUG" height="24"></p>
