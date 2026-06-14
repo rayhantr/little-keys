@@ -62,15 +62,18 @@ export function MainApp() {
 
       {keyboardVisible && <OnScreenKeyboard onChar={emit} mode={mode} />}
 
-      {/* Attribution — subtle "Bugged by SINDBUG" credit; pointer-events-none so
-          it never swallows a tap meant for the toy. */}
-      <div
-        aria-label="Bugged by SINDBUG"
-        className="pointer-events-none absolute inset-x-0 bottom-2 z-10 mx-auto flex w-fit items-center gap-2 text-xs text-white/40 select-none"
-      >
+      {/* Attribution — subtle "Bugged by SINDBUG" credit; only the gif links to sindbug.com. */}
+      <div className="absolute inset-x-0 bottom-2 z-10 mx-auto flex w-fit items-center gap-2 text-xs text-white/40 select-none">
         <span>Bugged by</span>
-        {/* eslint-disable-next-line @next/next/no-img-element -- animated GIF; next/image would freeze it to one frame */}
-        <img src="/SINDBUG.gif" alt="" className="h-4 w-auto" />
+        <a
+          href="https://sindbug.com"
+          target="_blank"
+          rel="noreferrer"
+          className="flex transition-opacity hover:opacity-70"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element -- animated GIF; next/image would freeze it to one frame */}
+          <img src="/SINDBUG.gif" alt="SINDBUG" className="h-4 w-auto" />
+        </a>
       </div>
     </main>
   );
