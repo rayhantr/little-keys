@@ -152,7 +152,7 @@ export function ControlsBar(props: Props) {
               <img src="/SINDBUG.gif" alt="SINDBUG" className="h-3 w-auto" />
             </a>
             <a
-              href="https://github.com/rayhantr/little-keys"
+              href="https://github.com/rayhantr/keyfetti"
               target="_blank"
               rel="noreferrer"
               aria-label="View source on GitHub"
